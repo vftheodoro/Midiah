@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Faturamento - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item active">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Faturamento e Pagamentos</h1>
+                <p class="topbar-subtitle">Gerencie suas faturas e métodos de pagamento</p>
+            </div>
+            <div class="topbar-right">
+                <button class="btn btn-outline">
+                    <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                    Exportar Extrato
+                </button>
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Summary Cards -->
+            <div class="billing-summary">
+                <div class="summary-card primary">
+                    <div class="summary-icon">
+                        <i data-lucide="wallet"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span class="summary-label">Saldo Atual</span>
+                        <span class="summary-value">R$ 1.250,00</span>
+                        <span class="summary-subtitle">Créditos disponíveis</span>
+                    </div>
+                    <button class="btn btn-sm btn-white">
+                        <i data-lucide="plus"></i>
+                        Adicionar Créditos
+                    </button>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-info">
+                        <i data-lucide="calendar"></i>
+                        <div>
+                            <strong>Próximo Vencimento</strong>
+                            <span>15 de Março de 2026</span>
+                        </div>
+                    </div>
+                    <div class="summary-amount">
+                        <span>R$ 850,00</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-info">
+                        <i data-lucide="trending-up"></i>
+                        <div>
+                            <strong>Gasto Este Mês</strong>
+                            <span>Fevereiro 2026</span>
+                        </div>
+                    </div>
+                    <div class="summary-amount">
+                        <span>R$ 2.450,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="credit-card"></i>
+                        Métodos de Pagamento
+                    </h3>
+                    <button class="btn btn-outline btn-sm">
+                        <i data-lucide="plus"></i>
+                        Adicionar Método
+                    </button>
+                </div>
+                <div class="payment-methods-list">
+                    <div class="payment-method active">
+                        <div class="method-info">
+                            <div class="method-icon pix">
+                                <i data-lucide="smartphone"></i>
+                            </div>
+                            <div class="method-details">
+                                <strong>PIX</strong>
+                                <span>Chave: ***@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="method-badge">
+                            <i data-lucide="check-circle"></i>
+                            Padrão
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="method-info">
+                            <div class="method-icon card">
+                                <i data-lucide="credit-card"></i>
+                            </div>
+                            <div class="method-details">
+                                <strong>Cartão de Crédito</strong>
+                                <span>Final •••• 4532</span>
+                            </div>
+                        </div>
+                        <button class="btn-icon">
+                            <i data-lucide="more-vertical"></i>
+                        </button>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="method-info">
+                            <div class="method-icon boleto">
+                                <i data-lucide="file-text"></i>
+                            </div>
+                            <div class="method-details">
+                                <strong>Boleto Bancário</strong>
+                                <span>Receber por email</span>
+                            </div>
+                        </div>
+                        <button class="btn-icon">
+                            <i data-lucide="more-vertical"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoices Table -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="file-text"></i>
+                        Histórico de Faturas
+                    </h3>
+                    <div class="filter-buttons">
+                        <button class="filter-chip active">Todas</button>
+                        <button class="filter-chip">Pagas</button>
+                        <button class="filter-chip">Pendentes</button>
+                        <button class="filter-chip">Vencidas</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="invoices-table">
+                        <thead>
+                            <tr>
+                                <th>Fatura</th>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="invoice-number">
+                                        <i data-lucide="file-text"></i>
+                                        <strong>#INV-2026-002</strong>
+                                    </div>
+                                </td>
+                                <td>01 Fev 2026</td>
+                                <td>Campanha "Promoção Verão" - Janeiro</td>
+                                <td><strong>R$ 850,00</strong></td>
+                                <td><span class="status-badge paid">Pago</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon-small" title="Baixar">
+                                            <i data-lucide="download"></i>
+                                        </button>
+                                        <button class="btn-icon-small" title="Visualizar">
+                                            <i data-lucide="eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="invoice-number">
+                                        <i data-lucide="file-text"></i>
+                                        <strong>#INV-2026-001</strong>
+                                    </div>
+                                </td>
+                                <td>05 Jan 2026</td>
+                                <td>Plano Premium - Janeiro</td>
+                                <td><strong>R$ 1.200,00</strong></td>
+                                <td><span class="status-badge paid">Pago</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon-small" title="Baixar">
+                                            <i data-lucide="download"></i>
+                                        </button>
+                                        <button class="btn-icon-small" title="Visualizar">
+                                            <i data-lucide="eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="pending-row">
+                                <td>
+                                    <div class="invoice-number">
+                                        <i data-lucide="file-text"></i>
+                                        <strong>#INV-2025-012</strong>
+                                    </div>
+                                </td>
+                                <td>15 Dez 2025</td>
+                                <td>Campanhas Múltiplas - Dezembro</td>
+                                <td><strong>R$ 2.100,00</strong></td>
+                                <td><span class="status-badge pending">Pendente</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn btn-sm btn-primary">
+                                            <i data-lucide="credit-card"></i>
+                                            Pagar Agora
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="invoice-number">
+                                        <i data-lucide="file-text"></i>
+                                        <strong>#INV-2025-011</strong>
+                                    </div>
+                                </td>
+                                <td>01 Dez 2025</td>
+                                <td>Plano Básico - Dezembro</td>
+                                <td><strong>R$ 650,00</strong></td>
+                                <td><span class="status-badge paid">Pago</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon-small" title="Baixar">
+                                            <i data-lucide="download"></i>
+                                        </button>
+                                        <button class="btn-icon-small" title="Visualizar">
+                                            <i data-lucide="eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="invoice-number">
+                                        <i data-lucide="file-text"></i>
+                                        <strong>#INV-2025-010</strong>
+                                    </div>
+                                </td>
+                                <td>02 Nov 2025</td>
+                                <td>Campanha Black Friday</td>
+                                <td><strong>R$ 1.500,00</strong></td>
+                                <td><span class="status-badge paid">Pago</span></td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-icon-small" title="Baixar">
+                                            <i data-lucide="download"></i>
+                                        </button>
+                                        <button class="btn-icon-small" title="Visualizar">
+                                            <i data-lucide="eye"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Help Card -->
+            <div class="card help-card">
+                <div class="help-content">
+                    <i data-lucide="help-circle"></i>
+                    <div>
+                        <h4>Precisa de ajuda com faturamento?</h4>
+                        <p>Nossa equipe está disponível para tirar suas dúvidas sobre pagamentos, faturas e reembolsos.</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline">
+                    <i data-lucide="message-circle"></i>
+                    Falar com Suporte
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (!user.email) {
+            window.location.href = '../login.html';
+        }
+
+        // Filter functionality
+        const filterChips = document.querySelectorAll('.filter-chip');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

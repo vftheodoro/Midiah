@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Painel Admin - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item active">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Visão Geral</h1>
+                <p class="admin-topbar-subtitle">Rede de Postos - Região Sul</p>
+            </div>
+            <div class="admin-topbar-right">
+                <input type="text" class="admin-search" placeholder="Buscar campanha, cliente ou ID...">
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">2</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Stats Grid -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <div class="admin-stat-header">
+                        <div>
+                            <div class="admin-stat-label">Total de Clientes</div>
+                            <div class="admin-stat-value">148</div>
+                            <div class="admin-stat-change positive">↑ 12% vs. mês anterior</div>
+                        </div>
+                        <div class="admin-stat-icon blue">
+                            <i data-lucide="users" style="width: 20px; height: 20px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-header">
+                        <div>
+                            <div class="admin-stat-label">Novos (30 dias)</div>
+                            <div class="admin-stat-value">24</div>
+                            <div class="admin-stat-change positive">↑ 6 pendentes aprovação</div>
+                        </div>
+                        <div class="admin-stat-icon green">
+                            <i data-lucide="user-plus" style="width: 20px; height: 20px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-header">
+                        <div>
+                            <div class="admin-stat-label">Anúncios Ativos</div>
+                            <div class="admin-stat-value">86</div>
+                            <div class="admin-stat-change">Em 142 players</div>
+                        </div>
+                        <div class="admin-stat-icon yellow">
+                            <i data-lucide="play-circle" style="width: 20px; height: 20px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="admin-stat-header">
+                        <div>
+                            <div class="admin-stat-label">Receita Média/Cliente</div>
+                            <div class="admin-stat-value">R$ 1.850</div>
+                            <div class="admin-stat-change positive">↑ 8,4% vs. mês anterior</div>
+                        </div>
+                        <div class="admin-stat-icon green">
+                            <i data-lucide="trending-up" style="width: 20px; height: 20px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aprovações Pendentes -->
+            <div class="admin-section-header">
+                <div class="admin-section-title">
+                    <i data-lucide="alert-circle" style="width: 24px; height: 24px; color: var(--cor-primaria);"></i>
+                    Aprovações Pendentes
+                    <span class="admin-badge yellow">17</span>
+                </div>
+                <div style="display: flex; gap: var(--espacamento-sm);">
+                    <button class="btn btn-outline btn-small">Selecionar Tudo</button>
+                    <button class="btn btn-outline btn-small">Filtrar</button>
+                </div>
+            </div>
+
+            <!-- Approval Cards -->
+            <div class="approval-card">
+                <div class="approval-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Promoção Combo">
+                    <span class="approval-video-badge">VÍDEO 15s</span>
+                </div>
+                <div class="approval-content">
+                    <h3 class="approval-title">Promoção Combo Whopper Triplo</h3>
+                    <div class="approval-meta">
+                        <div class="approval-meta-item">
+                            <i data-lucide="building" style="width: 14px; height: 14px;"></i>
+                            <span>Cliente: Anunciante A</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                            <span>24 Out - 01 Nov</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+                            <span>1920x1080</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                            <span>14 Postos</span>
+                        </div>
+                    </div>
+                    <p class="approval-id">ID: AD-4921</p>
+                    <div class="approval-actions">
+                        <button class="btn btn-primary btn-small">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Aprovar
+                        </button>
+                        <button class="btn btn-error btn-small">
+                            <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+                            Rejeitar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="approval-card">
+                <div class="approval-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Perfume">
+                    <span class="approval-video-badge">IMG ESTÁTICA</span>
+                </div>
+                <div class="approval-content">
+                    <h3 class="approval-title">Lançamento Coleção Primavera</h3>
+                    <div class="approval-meta">
+                        <div class="approval-meta-item">
+                            <i data-lucide="building" style="width: 14px; height: 14px;"></i>
+                            <span>Cliente: Anunciante B</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                            <span>25 Out - 25 Dez</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+                            <span>1080x1920</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                            <span>45 Postos</span>
+                        </div>
+                    </div>
+                    <p class="approval-id">ID: AD-4922</p>
+                    <div class="approval-actions">
+                        <button class="btn btn-primary btn-small">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Aprovar
+                        </button>
+                        <button class="btn btn-error btn-small">
+                            <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+                            Rejeitar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="approval-card">
+                <div class="approval-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400" alt="Alinhamento">
+                    <span class="approval-video-badge">VÍDEO 10s</span>
+                </div>
+                <div class="approval-content">
+                    <h3 class="approval-title">Oferta Especial Alinhamento</h3>
+                    <div class="approval-meta">
+                        <div class="approval-meta-item">
+                            <i data-lucide="building" style="width: 14px; height: 14px;"></i>
+                            <span>Cliente: AutoCenter X</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                            <span>Imediato</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="image" style="width: 14px; height: 14px;"></i>
+                            <span>1080x1080</span>
+                        </div>
+                        <div class="approval-meta-item">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                            <span>2 Postos</span>
+                        </div>
+                    </div>
+                    <p class="approval-id">ID: AD-4923</p>
+                    <div class="approval-actions">
+                        <button class="btn btn-primary btn-small">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Aprovar
+                        </button>
+                        <button class="btn btn-error btn-small">
+                            <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+                            Rejeitar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/mobile-menu.js"></script>
+    <script src="../assets/js/mobile-enhancements.js"></script>
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Gestão de Clientes - Midiah Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item active">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Gestão de Clientes</h1>
+                <p class="admin-topbar-subtitle">Administração de Conta · Base de Dados</p>
+            </div>
+            <div class="admin-topbar-right">
+                <button class="btn btn-primary">
+                    <i data-lucide="user-plus" style="width: 16px; height: 16px;"></i>
+                    Adicionar Cliente
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Stats Cards -->
+            <div class="admin-stats-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: var(--espacamento-xl);">
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon yellow">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="admin-stat-content">
+                        <div class="admin-stat-value">148</div>
+                        <div class="admin-stat-label">TOTAL DE CLIENTES</div>
+                        <div class="admin-stat-change positive">+8 este mês</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon green">
+                        <i data-lucide="user-check"></i>
+                    </div>
+                    <div class="admin-stat-content">
+                        <div class="admin-stat-value">24</div>
+                        <div class="admin-stat-label">NOVOS (30 DIAS)</div>
+                        <div class="admin-stat-change positive">+2 esta semana</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon blue">
+                        <i data-lucide="megaphone"></i>
+                    </div>
+                    <div class="admin-stat-content">
+                        <div class="admin-stat-value">86</div>
+                        <div class="admin-stat-label">ANÚNCIOS ATIVOS</div>
+                        <div class="admin-stat-change neutral">Média: 12 p/ cliente</div>
+                    </div>
+                </div>
+                
+                <div class="admin-stat-card">
+                    <div class="admin-stat-icon red">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="admin-stat-content">
+                        <div class="admin-stat-value">R$ 1.850</div>
+                        <div class="admin-stat-label">RECEITA MÉDIA</div>
+                        <div class="admin-stat-change positive">+5,2% vs. mês anterior</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters & Search -->
+            <div class="clients-controls">
+                <div class="clients-filters">
+                    <button class="filter-btn active" data-filter="todos">
+                        Todos <span class="filter-count">148</span>
+                    </button>
+                    <button class="filter-btn" data-filter="ativos">
+                        Ativos <span class="filter-count">132</span>
+                    </button>
+                    <button class="filter-btn" data-filter="inativos">
+                        Inativos <span class="filter-count">16</span>
+                    </button>
+                    <button class="filter-btn" data-filter="premium">
+                        Premium <span class="filter-count">8</span>
+                    </button>
+                </div>
+                
+                <div class="clients-search">
+                    <i data-lucide="search" style="width: 18px; height: 18px; color: #6b7280;"></i>
+                    <input type="text" placeholder="Buscar cliente, empresa ou email..." class="search-input">
+                </div>
+            </div>
+
+            <!-- Clients Table -->
+            <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                <div class="admin-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CLIENTE</th>
+                                <th>PLANO</th>
+                                <th>CAMPANHAS</th>
+                                <th>RECEITA</th>
+                                <th>ÚLTIMO ACESSO</th>
+                                <th>STATUS</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #22c55e;">BK</div>
+                                        <div>
+                                            <div class="client-name">Burger King</div>
+                                            <div class="client-id">burguerking@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge premium">Premium</span></td>
+                                <td><strong style="color: var(--cor-texto-primario);">12 ativas</strong></td>
+                                <td><strong style="color: var(--cor-texto-primario);">R$ 4.500,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>Hoje</div>
+                                        <div class="table-time">10:42</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge green">Ativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #f59e0b;">AC</div>
+                                        <div>
+                                            <div class="client-name">AutoCenter X</div>
+                                            <div class="client-id">autocenter@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge basic">Básico</span></td>
+                                <td><strong style="color: var(--cor-texto-primario);">3 ativas</strong></td>
+                                <td><strong style="color: var(--cor-texto-primario);">R$ 750,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>Ontem</div>
+                                        <div class="table-time">18:30</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge green">Ativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #3b82f6;">FS</div>
+                                        <div>
+                                            <div class="client-name">Farmácia São João</div>
+                                            <div class="client-id">farmacia@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge standard">Padrão</span></td>
+                                <td><strong style="color: var(--cor-texto-primario);">8 ativas</strong></td>
+                                <td><strong style="color: var(--cor-texto-primario);">R$ 3.000,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>23 Out</div>
+                                        <div class="table-time">11:20</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge green">Ativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #ef4444;">LC</div>
+                                        <div>
+                                            <div class="client-name">Loja de Roupas</div>
+                                            <div class="client-id">lojaroupas@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge basic">Básico</span></td>
+                                <td><strong style="color: #6b7280;">0 ativas</strong></td>
+                                <td><strong style="color: #6b7280;">R$ 0,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>15 Out</div>
+                                        <div class="table-time">14:05</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge red">Inativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #8b5cf6;">RC</div>
+                                        <div>
+                                            <div class="client-name">Restaurante Comida Boa</div>
+                                            <div class="client-id">restaurante@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge standard">Padrão</span></td>
+                                <td><strong style="color: var(--cor-texto-primario);">6 ativas</strong></td>
+                                <td><strong style="color: var(--cor-texto-primario);">R$ 2.100,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>Hoje</div>
+                                        <div class="table-time">08:15</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge green">Ativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="table-client">
+                                        <div class="client-avatar" style="background: #14b8a6;">PF</div>
+                                        <div>
+                                            <div class="client-name">Perfumaria Cheirosa</div>
+                                            <div class="client-id">perfumaria@email.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge premium">Premium</span></td>
+                                <td><strong style="color: var(--cor-texto-primario);">15 ativas</strong></td>
+                                <td><strong style="color: var(--cor-texto-primario);">R$ 5.200,00</strong></td>
+                                <td>
+                                    <div class="table-date">
+                                        <div>Hoje</div>
+                                        <div class="table-time">12:30</div>
+                                    </div>
+                                </td>
+                                <td><span class="admin-badge green">Ativo</span></td>
+                                <td>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="admin-btn-icon" title="Editar">
+                                            <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                        <button class="admin-btn-icon" title="Ver detalhes">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div style="text-align: center; padding: var(--espacamento-lg); color: #8b92a8; font-size: 0.85rem;">
+                    Mostrando 6 de 148 clientes · 
+                    <button class="btn-text" style="color: var(--cor-primaria);">Carregar mais</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+        
+        // Filtros
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Aqui você implementaria a lógica de filtro real
+                console.log('Filtro selecionado:', btn.dataset.filter);
+            });
+        });
+    </script>
+</body>
+</html>

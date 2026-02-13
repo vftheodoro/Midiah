@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Configurações - Midiah Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item active">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Configurações do Player</h1>
+                <p class="admin-topbar-subtitle">Controle Remoto · Shopping Center A</p>
+            </div>
+            <div class="admin-topbar-right">
+                <select class="device-selector">
+                    <option>Shopping Center A - #4821</option>
+                    <option>Farmácia Popular - #4822</option>
+                    <option>Academia Fitness - #4824</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <div class="config-layout">
+                <!-- Main Column -->
+                <div class="config-col-main">
+                    <!-- Ajustes de Exibição -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="sliders" style="width: 20px; height: 20px;"></i>
+                                Ajustes de Exibição
+                            </h3>
+                        </div>
+                        
+                        <div class="config-section">
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="sun" style="width: 16px; height: 16px;"></i>
+                                        Brilho da Tela
+                                    </label>
+                                    <span class="config-value">85%</span>
+                                </div>
+                                <input type="range" class="config-slider" min="0" max="100" value="85">
+                            </div>
+                            
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+                                        Volume do Áudio
+                                    </label>
+                                    <span class="config-value">60%</span>
+                                </div>
+                                <input type="range" class="config-slider" min="0" max="100" value="60">
+                            </div>
+                            
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="maximize" style="width: 16px; height: 16px;"></i>
+                                        Resolução de Saída
+                                    </label>
+                                </div>
+                                <select class="form-input">
+                                    <option>1920x1080 (Full HD)</option>
+                                    <option>1280x720 (HD)</option>
+                                    <option>3840x2160 (4K UHD)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="rotate-cw" style="width: 16px; height: 16px;"></i>
+                                        Orientação da Tela
+                                    </label>
+                                </div>
+                                <div class="config-radio-group">
+                                    <label class="config-radio">
+                                        <input type="radio" name="orientation" value="landscape" checked>
+                                        <span class="radio-label">Horizontal (Paisagem)</span>
+                                    </label>
+                                    <label class="config-radio">
+                                        <input type="radio" name="orientation" value="portrait">
+                                        <span class="radio-label">Vertical (Retrato)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Horários e Programação -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+                                Horários e Programação
+                            </h3>
+                        </div>
+                        
+                        <div class="config-section">
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="power" style="width: 16px; height: 16px;"></i>
+                                        Ligar Automaticamente
+                                    </label>
+                                    <label class="config-toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="config-time-inputs">
+                                    <div>
+                                        <label class="form-label-small">Horário</label>
+                                        <input type="time" class="form-input-small" value="08:00">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="power-off" style="width: 16px; height: 16px;"></i>
+                                        Desligar Automaticamente
+                                    </label>
+                                    <label class="config-toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="config-time-inputs">
+                                    <div>
+                                        <label class="form-label-small">Horário</label>
+                                        <input type="time" class="form-input-small" value="22:00">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="config-item">
+                                <div class="config-item-header">
+                                    <label class="config-label">
+                                        <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+                                        Duração do Loop
+                                    </label>
+                                </div>
+                                <select class="form-input">
+                                    <option>15 segundos por anúncio</option>
+                                    <option>30 segundos por anúncio</option>
+                                    <option>45 segundos por anúncio</option>
+                                    <option>60 segundos por anúncio</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conteúdo Padrão -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="image" style="width: 20px; height: 20px;"></i>
+                                Conteúdo Padrão (Sem Anúncios)
+                            </h3>
+                        </div>
+                        
+                        <p style="color: #8b92a8; font-size: 0.875rem; margin-bottom: var(--espacamento-lg);">
+                            Defina o que será exibido quando não houver campanhas ativas.
+                        </p>
+                        
+                        <div class="config-section">
+                            <div class="config-radio-group">
+                                <label class="config-radio">
+                                    <input type="radio" name="default-content" value="logo" checked>
+                                    <span class="radio-label">Logo Guaricana + Relógio</span>
+                                </label>
+                                <label class="config-radio">
+                                    <input type="radio" name="default-content" value="slideshow">
+                                    <span class="radio-label">Slideshow de Imagens</span>
+                                </label>
+                                <label class="config-radio">
+                                    <input type="radio" name="default-content" value="video">
+                                    <span class="radio-label">Vídeo Institucional</span>
+                                </label>
+                                <label class="config-radio">
+                                    <input type="radio" name="default-content" value="black">
+                                    <span class="radio-label">Tela Preta</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="config-col-sidebar">
+                    <!-- Status do Player -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="activity" style="width: 20px; height: 20px;"></i>
+                                Saúde do Player
+                            </h3>
+                        </div>
+                        
+                        <div class="health-status">
+                            <div class="health-indicator online">
+                                <div class="health-dot"></div>
+                                <span>ONLINE</span>
+                            </div>
+                            <div class="health-time">Ativo há 12h 34min</div>
+                        </div>
+                        
+                        <div class="health-stats">
+                            <div class="health-stat">
+                                <div class="health-stat-label">CPU</div>
+                                <div class="health-stat-value">28%</div>
+                                <div class="health-bar">
+                                    <div class="health-bar-fill" style="width: 28%; background: #22c55e;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="health-stat">
+                                <div class="health-stat-label">Memória</div>
+                                <div class="health-stat-value">4.2 GB / 8 GB</div>
+                                <div class="health-bar">
+                                    <div class="health-bar-fill" style="width: 52%; background: #3b82f6;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="health-stat">
+                                <div class="health-stat-label">Armazenamento</div>
+                                <div class="health-stat-value">18 GB / 32 GB</div>
+                                <div class="health-bar">
+                                    <div class="health-bar-fill" style="width: 56%; background: #f59e0b;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="health-stat">
+                                <div class="health-stat-label">Temperatura</div>
+                                <div class="health-stat-value">42°C</div>
+                                <div class="health-bar">
+                                    <div class="health-bar-fill" style="width: 42%; background: #22c55e;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ações Rápidas -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="zap" style="width: 20px; height: 20px;"></i>
+                                Ações Rápidas
+                            </h3>
+                        </div>
+                        
+                        <div class="quick-actions">
+                            <button class="quick-action-btn">
+                                <i data-lucide="refresh-cw" style="width: 20px; height: 20px;"></i>
+                                <span>Reiniciar Player</span>
+                            </button>
+                            
+                            <button class="quick-action-btn">
+                                <i data-lucide="download-cloud" style="width: 20px; height: 20px;"></i>
+                                <span>Atualizar Sistema</span>
+                            </button>
+                            
+                            <button class="quick-action-btn">
+                                <i data-lucide="trash-2" style="width: 20px; height: 20px;"></i>
+                                <span>Limpar Cache</span>
+                            </button>
+                            
+                            <button class="quick-action-btn">
+                                <i data-lucide="play" style="width: 20px; height: 20px;"></i>
+                                <span>Testar Reprodução</span>
+                            </button>
+                            
+                            <button class="quick-action-btn danger">
+                                <i data-lucide="power-off" style="width: 20px; height: 20px;"></i>
+                                <span>Desligar Dispositivo</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Informações do Sistema -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="info" style="width: 20px; height: 20px;"></i>
+                                Informações do Sistema
+                            </h3>
+                        </div>
+                        
+                        <div class="system-info-list">
+                            <div class="system-info-item">
+                                <span class="info-label">Modelo</span>
+                                <span class="info-value">Samsung 55" QLED</span>
+                            </div>
+                            <div class="system-info-item">
+                                <span class="info-label">Versão do App</span>
+                                <span class="info-value">2.4.1</span>
+                            </div>
+                            <div class="system-info-item">
+                                <span class="info-label">IP Local</span>
+                                <span class="info-value">192.168.1.105</span>
+                            </div>
+                            <div class="system-info-item">
+                                <span class="info-label">MAC Address</span>
+                                <span class="info-value">A4:B2:C8:DD:E2:F1</span>
+                            </div>
+                            <div class="system-info-item">
+                                <span class="info-label">Último Sync</span>
+                                <span class="info-value">Há 2 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Bar -->
+            <div class="config-action-bar">
+                <button class="btn btn-outline">
+                    <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+                    Cancelar
+                </button>
+                <button class="btn btn-primary">
+                    <i data-lucide="save" style="width: 16px; height: 16px;"></i>
+                    Salvar Configurações
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+        
+        // Update slider values
+        const sliders = document.querySelectorAll('.config-slider');
+        sliders.forEach(slider => {
+            const valueDisplay = slider.parentElement.querySelector('.config-value');
+            slider.addEventListener('input', (e) => {
+                valueDisplay.textContent = e.target.value + '%';
+            });
+        });
+    </script>
+</body>
+</html>

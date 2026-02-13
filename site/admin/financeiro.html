@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Financeiro & PIX - Midiah Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item active">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Financeiro & PIX</h1>
+                <p class="admin-topbar-subtitle">Fluxo de Caixa</p>
+            </div>
+            <div class="admin-topbar-right">
+                <input type="text" class="admin-search" placeholder="Buscar transação, ID PIX ou cliente...">
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Financial Stats -->
+            <div class="financial-grid">
+                <div class="financial-card primary">
+                    <div class="financial-header">
+                        <div class="financial-icon">
+                            <i data-lucide="dollar-sign" style="width: 24px; height: 24px;"></i>
+                        </div>
+                        <span class="financial-label">RECEITA TOTAL</span>
+                    </div>
+                    <div class="financial-value">R$ 48.250,00</div>
+                    <div class="financial-change positive">
+                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                        +12% vs. mês anterior
+                    </div>
+                </div>
+
+                <div class="financial-card warning">
+                    <div class="financial-header">
+                        <div class="financial-icon">
+                            <i data-lucide="clock" style="width: 24px; height: 24px;"></i>
+                        </div>
+                        <span class="financial-label">PIX PENDENTES</span>
+                    </div>
+                    <div class="financial-value">R$ 3.400,00</div>
+                    <div class="financial-info">
+                        <i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i>
+                        5 Transações · Aguardando
+                    </div>
+                </div>
+
+                <div class="financial-card success">
+                    <div class="financial-header">
+                        <div class="financial-icon">
+                            <i data-lucide="trending-up" style="width: 24px; height: 24px;"></i>
+                        </div>
+                        <span class="financial-label">CRESCIMENTO MENSAL</span>
+                    </div>
+                    <div class="financial-value">R$ 8.120,00</div>
+                    <div class="financial-change positive">
+                        <i data-lucide="arrow-up" style="width: 14px; height: 14px;"></i>
+                        8,4% · Média diária: R$ 1,2k
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="finance-two-col">
+                <!-- Transactions Table -->
+                <div class="finance-col-main">
+                    <div class="admin-section-header">
+                        <div class="admin-section-title">
+                            <i data-lucide="list" style="width: 20px; height: 20px;"></i>
+                            Transações Recentes
+                        </div>
+                        <div style="display: flex; gap: var(--espacamento-sm);">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="filter" style="width: 14px; height: 14px;"></i>
+                                Filtrar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="download" style="width: 14px; height: 14px;"></i>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="admin-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DATA</th>
+                                    <th>CLIENTE / ID PIX</th>
+                                    <th>VALOR</th>
+                                    <th>STATUS</th>
+                                    <th>AÇÃO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-date">
+                                            <div>Hoje</div>
+                                            <div class="table-time">10:42</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-client">
+                                            <div class="client-avatar" style="background: #22c55e;">A</div>
+                                            <div>
+                                                <div class="client-name">Anunciante A</div>
+                                                <div class="client-id">PIX: ***8882</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><strong style="color: var(--cor-texto-primario);">R$ 4.500,00</strong></td>
+                                    <td><span class="admin-badge green">Pago</span></td>
+                                    <td>
+                                        <button class="admin-btn-icon">
+                                            <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-date">
+                                            <div>Hoje</div>
+                                            <div class="table-time">00:18</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-client">
+                                            <div class="client-avatar" style="background: #f59e0b;">C</div>
+                                            <div>
+                                                <div class="client-name">Campanha Nova - B</div>
+                                                <div class="client-id">PIX: ***1923</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><strong style="color: var(--cor-texto-primario);">R$ 2.800,00</strong></td>
+                                    <td><span class="admin-badge yellow">Pendente</span></td>
+                                    <td>
+                                        <button class="admin-btn-icon">
+                                            <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-date">
+                                            <div>Ontem</div>
+                                            <div class="table-time">18:30</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-client">
+                                            <div class="client-avatar" style="background: #ef4444;">X</div>
+                                            <div>
+                                                <div class="client-name">AutoCenter X</div>
+                                                <div class="client-id">PIX: ***4561</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><strong style="color: var(--cor-texto-primario);">R$ 750,00</strong></td>
+                                    <td><span class="admin-badge green">Pago</span></td>
+                                    <td>
+                                        <button class="admin-btn-icon">
+                                            <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-date">
+                                            <div>Ontem</div>
+                                            <div class="table-time">01:00</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-client">
+                                            <div class="client-avatar" style="background: #ef4444;">B</div>
+                                            <div>
+                                                <div class="client-name">Burger King - Promo</div>
+                                                <div class="client-id">PIX: ***9912</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><strong style="color: #6b7280;">R$ 1.200,00</strong></td>
+                                    <td><span class="admin-badge red">Expirado</span></td>
+                                    <td>
+                                        <button class="admin-btn-icon">
+                                            <i data-lucide="info" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-date">
+                                            <div>23 Out</div>
+                                            <div class="table-time">11:20</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="table-client">
+                                            <div class="client-avatar" style="background: #22c55e;">F</div>
+                                            <div>
+                                                <div class="client-name">Farmácia São João</div>
+                                                <div class="client-id">PIX: ***2481</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><strong style="color: var(--cor-texto-primario);">R$ 3.000,00</strong></td>
+                                    <td><span class="admin-badge green">Pago</span></td>
+                                    <td>
+                                        <button class="admin-btn-icon">
+                                            <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--espacamento-lg); color: #8b92a8; font-size: 0.85rem;">
+                        Mostrando 5 de 42 transações · 
+                        <button class="btn-text" style="color: var(--cor-primaria);">Ver todas</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="finance-col-sidebar">
+                    <!-- Novo Recebimento -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="qr-code" style="width: 18px; height: 18px;"></i>
+                                Novo Recebimento
+                            </h3>
+                        </div>
+                        <p style="color: #8b92a8; font-size: 0.85rem; margin-bottom: var(--espacamento-lg);">
+                            Gerar link de pagamento PIX rápido para clientes.
+                        </p>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Valor (R$)</label>
+                            <input type="number" class="form-input" placeholder="0,00" step="0.01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Cliente</label>
+                            <select class="form-input">
+                                <option>Selecione um cliente...</option>
+                                <option>Anunciante A</option>
+                                <option>Anunciante B</option>
+                                <option>AutoCenter X</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block">
+                            <i data-lucide="qr-code" style="width: 16px; height: 16px;"></i>
+                            Gerar QR Code PIX
+                        </button>
+                    </div>
+
+                    <!-- Métodos de Pagamento -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="credit-card" style="width: 18px; height: 18px;"></i>
+                                Métodos de Pagamento
+                            </h3>
+                        </div>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <div class="payment-method-info">
+                                    <i data-lucide="smartphone" style="width: 20px; height: 20px; color: var(--cor-primaria);"></i>
+                                    <span>PIX</span>
+                                </div>
+                                <div class="payment-method-percentage">75%</div>
+                            </div>
+                            <div class="payment-method">
+                                <div class="payment-method-info">
+                                    <i data-lucide="credit-card" style="width: 20px; height: 20px; color: #3b82f6;"></i>
+                                    <span>Cartão</span>
+                                </div>
+                                <div class="payment-method-percentage">15%</div>
+                            </div>
+                            <div class="payment-method">
+                                <div class="payment-method-info">
+                                    <i data-lucide="file-text" style="width: 20px; height: 20px; color: #6b7280;"></i>
+                                    <span>Boleto</span>
+                                </div>
+                                <div class="payment-method-percentage">10%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-preference">
+                            <i data-lucide="info" style="width: 16px; height: 16px; color: var(--cor-primaria);"></i>
+                            <span>PIX é o método preferido!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>

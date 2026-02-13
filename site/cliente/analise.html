@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Análise - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item active">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Análise e Relatórios</h1>
+                <p class="topbar-subtitle">Acompanhe o desempenho das suas campanhas</p>
+            </div>
+            <div class="topbar-right">
+                <select class="select-period">
+                    <option>Últimos 7 dias</option>
+                    <option>Últimos 30 dias</option>
+                    <option>Este ano</option>
+                </select>
+                <button class="btn btn-outline">
+                    <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+                    Exportar
+                </button>
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i data-lucide="eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">12.458</div>
+                        <div class="stat-label">Total de Visualizações</div>
+                        <div class="stat-change positive">
+                            <i data-lucide="trending-up"></i>
+                            +12% vs. período anterior
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon yellow">
+                        <i data-lucide="play-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">1.782</div>
+                        <div class="stat-label">Exibições Completas</div>
+                        <div class="stat-change positive">
+                            <i data-lucide="trending-up"></i>
+                            +8% vs. período anterior
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">12.5s</div>
+                        <div class="stat-label">Tempo Médio</div>
+                        <div class="stat-change positive">
+                            <i data-lucide="trending-up"></i>
+                            +2.1s vs. período anterior
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">8.340</div>
+                        <div class="stat-label">Alcance Estimado</div>
+                        <div class="stat-change neutral">
+                            <i data-lucide="minus"></i>
+                            Estável
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="card chart-large">
+                    <div class="card-header">
+                        <h3>
+                            <i data-lucide="bar-chart-3"></i>
+                            Visualizações por Dia
+                        </h3>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-bars">
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 65%;">
+                                    <span class="bar-label">1.2k</span>
+                                </div>
+                                <span class="bar-day">Seg</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 80%;">
+                                    <span class="bar-label">1.5k</span>
+                                </div>
+                                <span class="bar-day">Ter</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 55%;">
+                                    <span class="bar-label">980</span>
+                                </div>
+                                <span class="bar-day">Qua</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 90%;">
+                                    <span class="bar-label">1.8k</span>
+                                </div>
+                                <span class="bar-day">Qui</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 75%;">
+                                    <span class="bar-label">1.4k</span>
+                                </div>
+                                <span class="bar-day">Sex</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 100%;">
+                                    <span class="bar-label">2.1k</span>
+                                </div>
+                                <span class="bar-day">Sáb</span>
+                            </div>
+                            <div class="bar-wrapper">
+                                <div class="bar" style="height: 85%;">
+                                    <span class="bar-label">1.7k</span>
+                                </div>
+                                <span class="bar-day">Dom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            <i data-lucide="pie-chart"></i>
+                            Por Campanha
+                        </h3>
+                    </div>
+                    <div class="pie-chart-legend">
+                        <div class="legend-item">
+                            <span class="color-dot yellow"></span>
+                            <span class="legend-text">Promoção Verão</span>
+                            <span class="legend-percent">45%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-dot green"></span>
+                            <span class="legend-text">Novos Produtos</span>
+                            <span class="legend-percent">30%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-dot blue"></span>
+                            <span class="legend-text">Institucional</span>
+                            <span class="legend-percent">25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Table -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="trending-up"></i>
+                        Desempenho por Campanha
+                    </h3>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Campanha</th>
+                                <th>Visualizações</th>
+                                <th>Taxa Conclusão</th>
+                                <th>Tempo Médio</th>
+                                <th>Alcance</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info">
+                                        <div class="campaign-color yellow"></div>
+                                        <span>Promoção de Verão 2026</span>
+                                    </div>
+                                </td>
+                                <td><strong>5.620</strong></td>
+                                <td>
+                                    <div class="progress-inline">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 85%;"></div>
+                                        </div>
+                                        <span>85%</span>
+                                    </div>
+                                </td>
+                                <td>14.2s</td>
+                                <td>3.780</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info">
+                                        <div class="campaign-color green"></div>
+                                        <span>Lançamento Novos Produtos</span>
+                                    </div>
+                                </td>
+                                <td><strong>3.748</strong></td>
+                                <td>
+                                    <div class="progress-inline">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 78%;"></div>
+                                        </div>
+                                        <span>78%</span>
+                                    </div>
+                                </td>
+                                <td>11.8s</td>
+                                <td>2.510</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="campaign-info">
+                                        <div class="campaign-color blue"></div>
+                                        <span>Vídeo Institucional</span>
+                                    </div>
+                                </td>
+                                <td><strong>3.090</strong></td>
+                                <td>
+                                    <div class="progress-inline">
+                                        <div class="progress-bar-mini">
+                                            <div class="progress-fill-mini" style="width: 92%;"></div>
+                                        </div>
+                                        <span>92%</span>
+                                    </div>
+                                </td>
+                                <td>15.1s</td>
+                                <td>2.050</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Heatmap -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="clock"></i>
+                        Horários de Maior Visualização
+                    </h3>
+                </div>
+                <div class="heatmap-grid">
+                    <div class="heatmap-hour low">00h</div>
+                    <div class="heatmap-hour low">01h</div>
+                    <div class="heatmap-hour low">02h</div>
+                    <div class="heatmap-hour low">03h</div>
+                    <div class="heatmap-hour low">04h</div>
+                    <div class="heatmap-hour low">05h</div>
+                    <div class="heatmap-hour medium">06h</div>
+                    <div class="heatmap-hour high">07h</div>
+                    <div class="heatmap-hour high">08h</div>
+                    <div class="heatmap-hour very-high">09h</div>
+                    <div class="heatmap-hour medium">10h</div>
+                    <div class="heatmap-hour high">11h</div>
+                    <div class="heatmap-hour very-high">12h</div>
+                    <div class="heatmap-hour high">13h</div>
+                    <div class="heatmap-hour medium">14h</div>
+                    <div class="heatmap-hour medium">15h</div>
+                    <div class="heatmap-hour medium">16h</div>
+                    <div class="heatmap-hour high">17h</div>
+                    <div class="heatmap-hour very-high">18h</div>
+                    <div class="heatmap-hour very-high">19h</div>
+                    <div class="heatmap-hour high">20h</div>
+                    <div class="heatmap-hour medium">21h</div>
+                    <div class="heatmap-hour low">22h</div>
+                    <div class="heatmap-hour low">23h</div>
+                </div>
+                <div class="heatmap-legend">
+                    <span>Baixo</span>
+                    <div class="gradient-bar"></div>
+                    <span>Alto</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (!user.email) {
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>

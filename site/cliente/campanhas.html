@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Campanhas - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item active">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Minhas Campanhas</h1>
+                <p class="topbar-subtitle">Gerencie todos os seus anúncios em um só lugar</p>
+            </div>
+            <div class="topbar-right">
+                <a href="novo-anuncio.html" class="btn btn-primary">
+                    <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                    Nova Campanha
+                </a>
+                <button class="notification-bell">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">0</span>
+                </button>
+                <div class="user-avatar-small">AG</div>
+            </div>
+        </header>
+
+        <!-- Filtros -->
+        <div class="filters-section">
+            <div class="filters-group">
+                <button class="filter-btn active" data-filter="all">
+                    <i data-lucide="list" style="width: 16px; height: 16px;"></i>
+                    Todas (0)
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
+                    Ativas (0)
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+                    Pendentes (0)
+                </button>
+                <button class="filter-btn" data-filter="scheduled">
+                    <i data-lucide="calendar" style="width: 16px; height: 16px;"></i>
+                    Agendadas (0)
+                </button>
+                <button class="filter-btn" data-filter="finished">
+                    <i data-lucide="check-circle" style="width: 16px; height: 16px;"></i>
+                    Finalizadas (0)
+                </button>
+            </div>
+            <div class="search-box">
+                <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+                <input type="text" placeholder="Buscar campanhas...">
+            </div>
+        </div>
+
+        <!-- Lista de Campanhas -->
+        <div class="campaigns-container">
+            <div class="empty-state">
+                <i data-lucide="inbox" style="width: 80px; height: 80px; margin-bottom: 24px; opacity: 0.2;"></i>
+                <h2>Nenhuma campanha criada ainda</h2>
+                <p>Comece criando sua primeira campanha e alcance milhares de pessoas!</p>
+                <a href="novo-anuncio.html" class="btn btn-primary btn-large mt-xl">
+                    <i data-lucide="plus" style="width: 20px; height: 20px;"></i>
+                    Criar Primeira Campanha
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/dashboard.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

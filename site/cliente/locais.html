@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Locais Disponíveis - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item active">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Locais Disponíveis</h1>
+                <p class="topbar-subtitle">Escolha onde seus anúncios serão exibidos</p>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Buscar local...">
+                </div>
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">
+                    <i data-lucide="list"></i>
+                    Todos os Locais
+                </button>
+                <button class="filter-tab" data-filter="indoor">
+                    <i data-lucide="building-2"></i>
+                    Ambientes Internos
+                </button>
+                <button class="filter-tab" data-filter="outdoor">
+                    <i data-lucide="sun"></i>
+                    Ambientes Externos
+                </button>
+                <button class="filter-tab" data-filter="premium">
+                    <i data-lucide="star"></i>
+                    Premium
+                </button>
+            </div>
+
+            <!-- Locais Grid -->
+            <div class="locations-grid">
+                <!-- Local Card 1 -->
+                <div class="location-card premium">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1579546928686-286022d1c55d?w=400&h=300&fit=crop" alt="Autoposto Guaricana">
+                        <div class="location-badge premium">
+                            <i data-lucide="star"></i>
+                            Premium
+                        </div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Autoposto Guaricana - Tela Principal</h3>
+                        <p class="location-description">Telão de 55" em pista de abastecimento com alto fluxo</p>
+                        
+                        <div class="location-stats">
+                            <div class="location-stat">
+                                <i data-lucide="eye"></i>
+                                <div>
+                                    <strong>2.500+</strong>
+                                    <span>Visualizações/dia</span>
+                                </div>
+                            </div>
+                            <div class="location-stat">
+                                <i data-lucide="clock"></i>
+                                <div>
+                                    <strong>6h-22h</strong>
+                                    <span>Horário ativo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="location-features">
+                            <span class="feature-tag">
+                                <i data-lucide="sun"></i>
+                                Externo
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="wifi"></i>
+                                Full HD
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="volume-2"></i>
+                                Com Áudio
+                            </span>
+                        </div>
+
+                        <div class="location-price">
+                            <div class="price-info">
+                                <span class="price-label">A partir de</span>
+                                <span class="price-value">R$ 350,00<span class="price-period">/mês</span></span>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i data-lucide="plus"></i>
+                                Anunciar Aqui
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Card 2 -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Loja Conveniência">
+                        <div class="location-badge">
+                            <i data-lucide="map-pin"></i>
+                            Disponível
+                        </div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Loja de Conveniência - Balcão</h3>
+                        <p class="location-description">Tela 43" na área de pagamento e espera</p>
+                        
+                        <div class="location-stats">
+                            <div class="location-stat">
+                                <i data-lucide="eye"></i>
+                                <div>
+                                    <strong>1.800+</strong>
+                                    <span>Visualizações/dia</span>
+                                </div>
+                            </div>
+                            <div class="location-stat">
+                                <i data-lucide="clock"></i>
+                                <div>
+                                    <strong>5h-23h</strong>
+                                    <span>Horário ativo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="location-features">
+                            <span class="feature-tag">
+                                <i data-lucide="building-2"></i>
+                                Interno
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="wifi"></i>
+                                Full HD
+                            </span>
+                        </div>
+
+                        <div class="location-price">
+                            <div class="price-info">
+                                <span class="price-label">A partir de</span>
+                                <span class="price-value">R$ 250,00<span class="price-period">/mês</span></span>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i data-lucide="plus"></i>
+                                Anunciar Aqui
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Card 3 -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop" alt="Área Externa">
+                        <div class="location-badge">
+                            <i data-lucide="map-pin"></i>
+                            Disponível
+                        </div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Área de Lavagem - Painel LED</h3>
+                        <p class="location-description">Painel LED outdoor com alta visibilidade</p>
+                        
+                        <div class="location-stats">
+                            <div class="location-stat">
+                                <i data-lucide="eye"></i>
+                                <div>
+                                    <strong>3.200+</strong>
+                                    <span>Visualizações/dia</span>
+                                </div>
+                            </div>
+                            <div class="location-stat">
+                                <i data-lucide="clock"></i>
+                                <div>
+                                    <strong>24h</strong>
+                                    <span>Sempre ativo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="location-features">
+                            <span class="feature-tag">
+                                <i data-lucide="sun"></i>
+                                Externo
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="zap"></i>
+                                LED
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="eye-off"></i>
+                                Sem Áudio
+                            </span>
+                        </div>
+
+                        <div class="location-price">
+                            <div class="price-info">
+                                <span class="price-label">A partir de</span>
+                                <span class="price-value">R$ 450,00<span class="price-period">/mês</span></span>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i data-lucide="plus"></i>
+                                Anunciar Aqui
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Card 4 -->
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="Entrada Principal">
+                        <div class="location-badge">
+                            <i data-lucide="map-pin"></i>
+                            Disponível
+                        </div>
+                    </div>
+                    <div class="location-content">
+                        <h3 class="location-title">Entrada Principal - Totem Digital</h3>
+                        <p class="location-description">Totem interativo na entrada do estabelecimento</p>
+                        
+                        <div class="location-stats">
+                            <div class="location-stat">
+                                <i data-lucide="eye"></i>
+                                <div>
+                                    <strong>2.100+</strong>
+                                    <span>Visualizações/dia</span>
+                                </div>
+                            </div>
+                            <div class="location-stat">
+                                <i data-lucide="clock"></i>
+                                <div>
+                                    <strong>6h-22h</strong>
+                                    <span>Horário ativo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="location-features">
+                            <span class="feature-tag">
+                                <i data-lucide="sun"></i>
+                                Semi-Externo
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="wifi"></i>
+                                4K UHD
+                            </span>
+                            <span class="feature-tag">
+                                <i data-lucide="touch"></i>
+                                Touch
+                            </span>
+                        </div>
+
+                        <div class="location-price">
+                            <div class="price-info">
+                                <span class="price-label">A partir de</span>
+                                <span class="price-value">R$ 300,00<span class="price-period">/mês</span></span>
+                            </div>
+                            <button class="btn btn-primary">
+                                <i data-lucide="plus"></i>
+                                Anunciar Aqui
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="card info-card">
+                <div class="info-content">
+                    <i data-lucide="info"></i>
+                    <div>
+                        <h4>Como funciona a veiculação?</h4>
+                        <p>Seus anúncios são exibidos em loop contínuo nos horários de funcionamento de cada local. Você pode escolher múltiplos locais e acompanhar o desempenho em tempo real.</p>
+                    </div>
+                </div>
+                <button class="btn btn-outline">
+                    <i data-lucide="help-circle"></i>
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (!user.email) {
+            window.location.href = '../login.html';
+        }
+        
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

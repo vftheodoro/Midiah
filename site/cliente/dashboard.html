@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Dashboard - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Painel de Campanhas</h1>
+                <p class="topbar-subtitle">Gerencie seus anúncios no Autoposto Guaricana</p>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-status">
+                    <span class="status-dot online"></span>
+                    <span>Status da Rede: Online</span>
+                </div>
+                <a href="novo-anuncio.html" class="btn btn-primary">
+                    <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                    Comprar Novo Slot
+                </a>
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <!-- Notifications Drawer -->
+        <div class="notifications-drawer" id="notificationsDrawer">
+            <div class="notifications-header">
+                <h3>
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    Notificações
+                </h3>
+                <button class="btn-close" onclick="toggleNotifications()">
+                    <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+            
+            <div class="notifications-body">
+                <div class="notification-item unread">
+                    <div class="notification-icon success">
+                        <i data-lucide="check-circle" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Pagamento aprovado</h4>
+                        <p>Sua campanha "Promoção de Verão" foi aprovada e entrará no ar hoje às 18h.</p>
+                        <span class="notification-time">Há 2 horas</span>
+                    </div>
+                    <span class="unread-dot"></span>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-icon warning">
+                        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Revisão necessária</h4>
+                        <p>A mídia "Banner Principal" precisa de ajustes na resolução. Envie novamente em 1920x1080.</p>
+                        <span class="notification-time">Há 5 horas</span>
+                    </div>
+                    <span class="unread-dot"></span>
+                </div>
+
+                <div class="notification-item unread">
+                    <div class="notification-icon info">
+                        <i data-lucide="info" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Relatório disponível</h4>
+                        <p>O relatório de dezembro já está disponível com 15.432 reproduções totais.</p>
+                        <span class="notification-time">Ontem</span>
+                    </div>
+                    <span class="unread-dot"></span>
+                </div>
+
+                <div class="notification-item read">
+                    <div class="notification-icon success">
+                        <i data-lucide="trending-up" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Meta atingida!</h4>
+                        <p>Sua campanha alcançou 10.000 visualizações em apenas 3 dias.</p>
+                        <span class="notification-time">3 dias atrás</span>
+                    </div>
+                </div>
+
+                <div class="notification-item read">
+                    <div class="notification-icon info">
+                        <i data-lucide="user-plus" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div class="notification-content">
+                        <h4>Bem-vindo ao Midiah!</h4>
+                        <p>Sua conta foi criada com sucesso. Comece criando sua primeira campanha.</p>
+                        <span class="notification-time">1 semana atrás</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notifications-footer">
+                <button class="btn btn-text btn-block" onclick="markAllAsRead()">
+                    <i data-lucide="check-check" style="width: 16px; height: 16px;"></i>
+                    Marcar todas como lidas
+                </button>
+            </div>
+        </div>
+        <div class="notifications-overlay" id="notificationsOverlay" onclick="toggleNotifications()"></div>
+        <!-- Profile Drawer -->
+        <div class="profile-drawer" id="profileDrawer">
+            <div class="profile-header">
+                <h3>
+                    <i data-lucide="user" style="width: 20px; height: 20px;"></i>
+                    Meu Perfil
+                </h3>
+                <button class="btn-close" onclick="toggleProfile()">
+                    <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+                </button>
+            </div>
+            
+            <div class="profile-body">
+                <!-- User Info Section -->
+                <div class="profile-section">
+                    <div class="profile-avatar-large">
+                        <span>AG</span>
+                        <button class="avatar-edit-btn">
+                            <i data-lucide="camera" style="width: 16px; height: 16px;"></i>
+                        </button>
+                    </div>
+                    <h3 class="profile-name">Autoposto Guaricana</h3>
+                    <span class="profile-role">ADMINISTRADOR</span>
+                </div>
+
+                <!-- Account Details -->
+                <div class="profile-section">
+                    <h4 class="section-title">
+                        <i data-lucide="building" style="width: 18px; height: 18px;"></i>
+                        Dados da Empresa
+                    </h4>
+                    <div class="profile-info-grid">
+                        <div class="info-item">
+                            <label>CNPJ</label>
+                            <p>12.345.678/0001-90</p>
+                        </div>
+                        <div class="info-item">
+                            <label>E-mail</label>
+                            <p>contato@guaricana.com.br</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Telefone</label>
+                            <p>(11) 98765-4321</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Endereço</label>
+                            <p>Av. Principal, 1234 - São Paulo/SP</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-small btn-block mt-md">
+                        <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
+                        Editar Informações
+                    </button>
+                </div>
+
+                <!-- Subscription Info -->
+                <div class="profile-section">
+                    <h4 class="section-title">
+                        <i data-lucide="credit-card" style="width: 18px; height: 18px;"></i>
+                        Assinatura
+                    </h4>
+                    <div class="subscription-card">
+                        <div class="subscription-header">
+                            <div>
+                                <span class="subscription-badge">ATIVO</span>
+                                <h5>Plano Profissional</h5>
+                            </div>
+                            <span class="subscription-price">R$ 499/mês</span>
+                        </div>
+                        <div class="subscription-details">
+                            <div class="detail-item">
+                                <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                                <span>Próxima cobrança: 28/02/2026</span>
+                            </div>
+                            <div class="detail-item">
+                                <i data-lucide="check-circle" style="width: 14px; height: 14px;"></i>
+                                <span>Slot ilímitado</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-small btn-block mt-md">
+                        <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+                        Gerenciar Assinatura
+                    </button>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="profile-section">
+                    <h4 class="section-title">
+                        <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
+                        Configurações
+                    </h4>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i data-lucide="bell" style="width: 18px; height: 18px;"></i>
+                                <div>
+                                    <strong>Notificações</strong>
+                                    <p>Receber alertas por e-mail e WhatsApp</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i data-lucide="lock" style="width: 18px; height: 18px;"></i>
+                                <div>
+                                    <strong>Autenticação em duas etapas</strong>
+                                    <p>Segurança adicional para sua conta</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i data-lucide="moon" style="width: 18px; height: 18px;"></i>
+                                <div>
+                                    <strong>Modo escuro</strong>
+                                    <p>Tema visual da plataforma</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-footer">
+                <button class="btn btn-outline btn-block">
+                    <i data-lucide="life-buoy" style="width: 16px; height: 16px;"></i>
+                    Central de Ajuda
+                </button>
+                <button class="btn btn-text btn-block text-error">
+                    <i data-lucide="log-out" style="width: 16px; height: 16px;"></i>
+                    Sair da Conta
+                </button>
+            </div>
+        </div>
+        <div class="profile-overlay" id="profileOverlay" onclick="toggleProfile()"></div>
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i data-lucide="play-circle" class="stat-icon"></i>
+                    <span class="stat-label">TOTAL DE REPRODUÇÕES</span>
+                </div>
+                <div class="stat-value">
+                    0
+                    <span class="stat-change neutral">—</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i data-lucide="tv" class="stat-icon"></i>
+                    <span class="stat-label">CAMPANHAS ATIVAS</span>
+                </div>
+                <div class="stat-value">
+                    0
+                    <span class="stat-status">Anúncios</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i data-lucide="clock" class="stat-icon"></i>
+                    <span class="stat-label">AGUARDANDO APROVAÇÃO</span>
+                </div>
+                <div class="stat-value">
+                    0
+                    <span class="stat-status">Pendentes</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i data-lucide="dollar-sign" class="stat-icon"></i>
+                    <span class="stat-label">INVESTIMENTO TOTAL</span>
+                </div>
+                <div class="stat-value">
+                    R$ 0,00
+                    <span class="stat-status">Este mês</span>
+                </div>
+                <div class="stat-progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="content-grid">
+            <!-- Campanhas Ativas -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>
+                        <i data-lucide="megaphone" style="width: 24px; height: 24px; margin-right: 8px;"></i>
+                        Campanhas Ativas
+                    </h2>
+                    <a href="campanhas.html" class="link-more">Ver Todas</a>
+                </div>
+
+                <div class="table-container">
+                    <div class="empty-state">
+                        <i data-lucide="inbox" style="width: 64px; height: 64px; margin-bottom: 16px; opacity: 0.3;"></i>
+                        <h3>Nenhuma campanha ativa</h3>
+                        <p>Comece criando seu primeiro anúncio para aparecer no telão</p>
+                        <a href="novo-anuncio.html" class="btn btn-primary mt-lg">
+                            <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                            Criar Primeira Campanha
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="map-section">
+                    <div class="map-header">
+                        <h3>Alcance Regional</h3>
+                        <button class="btn btn-secondary btn-small">VER MAPA COMPLETO</button>
+                    </div>
+                    <div class="map-placeholder">
+                        <div class="map-point"></div>
+                        <p class="map-label">Visualize seus anúncios em tempo real</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Direita -->
+            <aside class="right-sidebar">
+                <!-- Enviar Mídia -->
+                <div class="widget">
+                    <h3>
+                        <i data-lucide="upload" style="width: 20px; height: 20px; margin-right: 8px;"></i>
+                        Enviar Mídia
+                    </h3>
+                    <a href="novo-anuncio.html" class="upload-box">
+                        <i data-lucide="upload-cloud" style="width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.5;"></i>
+                        <p>CLIQUE PARA ENVIAR</p>
+                        <span class="upload-hint">MP4, JPG, PNG (Máx 50MB)</span>
+                    </a>
+                    
+                    <div class="recent-uploads">
+                        <h4>ENVIADOS RECENTEMENTE</h4>
+                        <div class="empty-message">
+                            <span style="font-size: 0.9rem; color: var(--cor-texto-terciario);">Nenhum arquivo enviado ainda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audiência -->
+                <div class="widget">
+                    <h3>
+                        <i data-lucide="users" style="width: 20px; height: 20px; margin-right: 8px;"></i>
+                        Audiência
+                    </h3>
+                    <div class="audience-status">
+                        <div class="status-indicator live">
+                            <i data-lucide="radio" style="width: 14px; height: 14px;"></i>
+                            AO VIVO
+                        </div>
+                    </div>
+                    
+                    <div class="audience-stats">
+                        <div class="audience-stat">
+                            <span class="audience-label">PICO MANHÃ</span>
+                            <strong>—</strong>
+                        </div>
+                        <div class="audience-stat">
+                            <span class="audience-label">PICO TARDE</span>
+                            <strong>—</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="time-info">
+                        <div class="time-item">
+                            <span>
+                                <i data-lucide="clock" style="width: 14px; height: 14px; margin-right: 4px;"></i>
+                                HORÁRIO PICO
+                            </span>
+                            <strong>08:00 - 09:30</strong>
+                        </div>
+                        <div class="time-item">
+                            <span>
+                                <i data-lucide="timer" style="width: 14px; height: 14px; margin-right: 4px;"></i>
+                                TEMPO POR SLOT
+                            </span>
+                            <strong>15 Seg</strong>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="../assets/js/mobile-menu.js"></script>
+    <script src="../assets/js/mobile-enhancements.js"></script>
+    <script src="../assets/js/mobile-menu.js"></script>
+    <script src="../assets/js/mobile-enhancements.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>

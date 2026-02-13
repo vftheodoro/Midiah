@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Gestão de Campanhas - Midiah Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item active">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Gestão de Campanhas</h1>
+                <p class="admin-topbar-subtitle">Todos os Anúncios</p>
+            </div>
+            <div class="admin-topbar-right">
+                <input type="text" class="admin-search" placeholder="Buscar por nome, cliente ou ID...">
+                <button class="btn btn-primary">
+                    <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                    Nova Campanha
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Filters -->
+            <div class="admin-filters">
+                <button class="admin-filter-btn active">Todos</button>
+                <button class="admin-filter-btn">Ativos</button>
+                <button class="admin-filter-btn">Pausado</button>
+                <button class="admin-filter-btn">Agendados</button>
+                <button class="admin-filter-btn">Finalizados</button>
+            </div>
+
+            <!-- Campaign Cards Grid -->
+            <div class="campaigns-grid">
+                <!-- Card 1 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400" alt="Promoção">
+                        <span class="campaign-status-badge active">ATIVO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Promoção Combo...</h3>
+                        <p class="campaign-client">Anunciante A</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Período</span>
+                                <span class="meta-value">24 Out - 01 Nov</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Plays Total</span>
+                                <span class="meta-value">12,450</span>
+                            </div>
+                        </div>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-text">85%</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="edit" style="width: 14px; height: 14px;"></i>
+                                Editar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i>
+                                Dados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Perfume">
+                        <span class="campaign-status-badge active">ATIVO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Lançamento Coleção</h3>
+                        <p class="campaign-client">Anunciante B</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Período</span>
+                                <span class="meta-value">25 Out - 25 Dez</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Plays Total</span>
+                                <span class="meta-value">8,302</span>
+                            </div>
+                        </div>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 12%"></div>
+                            </div>
+                            <span class="progress-text">12%</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="edit" style="width: 14px; height: 14px;"></i>
+                                Editar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i>
+                                Dados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400" alt="Alinhamento">
+                        <span class="campaign-status-badge paused">PAUSADO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Oferta Alinhamento</h3>
+                        <p class="campaign-client">AutoCenter X</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Período</span>
+                                <span class="meta-value">Imediato</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Plays Total</span>
+                                <span class="meta-value">1,290</span>
+                            </div>
+                        </div>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill gray" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-text">30%</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="play" style="width: 14px; height: 14px;"></i>
+                                Retomar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="more-horizontal" style="width: 14px; height: 14px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=400" alt="Natal">
+                        <span class="campaign-status-badge scheduled">AGENDADO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Natal Antecipado</h3>
+                        <p class="campaign-client">Shopping Center</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Início</span>
+                                <span class="meta-value">10 Dez</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Previsão</span>
+                                <span class="meta-value">50k Plays</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta-info">
+                            <span>Status</span>
+                            <span>Aguardando Início</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="edit" style="width: 14px; height: 14px;"></i>
+                                Editar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+                                Agenda
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1607083206325-caf1edba7a0f?w=400" alt="Black Friday">
+                        <span class="campaign-status-badge finished">FINALIZADO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Black Friday 2023</h3>
+                        <p class="campaign-client">Eletrônicos Y</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Terminou em</span>
+                                <span class="meta-value">25 Nov</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Total</span>
+                                <span class="meta-value">45,200</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta-info">
+                            <span>Conclusão</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="eye" style="width: 14px; height: 14px;"></i>
+                                Detalhes
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="file-text" style="width: 14px; height: 14px;"></i>
+                                Relatório
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="campaign-card">
+                    <div class="campaign-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400" alt="Café">
+                        <span class="campaign-status-badge active">ATIVO</span>
+                    </div>
+                    <div class="campaign-details">
+                        <h3 class="campaign-title">Café da Manhã</h3>
+                        <p class="campaign-client">Padaria Central</p>
+                        <div class="campaign-meta">
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Período</span>
+                                <span class="meta-value">Contínuo</span>
+                            </div>
+                            <div class="campaign-meta-item">
+                                <span class="meta-label">Horário Nobre</span>
+                                <span class="meta-value">Alta Performance</span>
+                            </div>
+                        </div>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-text">100%</span>
+                        </div>
+                        <div class="campaign-actions">
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="edit" style="width: 14px; height: 14px;"></i>
+                                Editar
+                            </button>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i>
+                                Dados
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+
+        // Filtros
+        document.querySelectorAll('.admin-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.admin-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

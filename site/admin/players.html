@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1d24">
+    <title>Players & Telas - Midiah Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+            <div class="admin-logo">
+                <div class="admin-logo-icon">G</div>
+                <span>GUARICANA</span>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="dashboard.html" class="admin-nav-item">
+                <i data-lucide="layout-dashboard" class="admin-nav-icon"></i>
+                <span>Painel de Controle</span>
+            </a>
+            <a href="campanhas.html" class="admin-nav-item">
+                <i data-lucide="megaphone" class="admin-nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="players.html" class="admin-nav-item active">
+                <i data-lucide="monitor" class="admin-nav-icon"></i>
+                <span>Players & Telas</span>
+            </a>
+            <a href="financeiro.html" class="admin-nav-item">
+                <i data-lucide="dollar-sign" class="admin-nav-icon"></i>
+                <span>Financeiro & PIX</span>
+            </a>
+            <a href="clientes.html" class="admin-nav-item">
+                <i data-lucide="users" class="admin-nav-icon"></i>
+                <span>Clientes</span>
+            </a>
+            <a href="configuracoes.html" class="admin-nav-item">
+                <i data-lucide="settings" class="admin-nav-icon"></i>
+                <span>Configurações</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <div class="admin-user-info">
+                <div class="admin-user-avatar">AD</div>
+                <div class="admin-user-details">
+                    <span class="admin-user-name">Administrador</span>
+                    <span class="admin-user-role">Gestor do Sistema</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <div class="admin-topbar-left">
+                <h1>Players & Telas</h1>
+                <p class="admin-topbar-subtitle">Gestão de Dispositivos · Conexão</p>
+            </div>
+            <div class="admin-topbar-right">
+                <button class="btn btn-outline">
+                    <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+                    Atualizar
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Two Column Layout -->
+            <div class="players-layout">
+                <!-- Left Column - Pairing -->
+                <div class="players-col-main">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="monitor-plus" style="width: 20px; height: 20px;"></i>
+                                Parear Novo Telão
+                            </h3>
+                        </div>
+                        
+                        <p style="color: #8b92a8; font-size: 0.875rem; margin-bottom: var(--espacamento-xl);">
+                            Conecte uma nova tela ao sistema inserindo o código de pareamento gerado no dispositivo.
+                        </p>
+                        
+                        <div class="pairing-code-section">
+                            <div class="pairing-illustration">
+                                <div class="pairing-icon-container">
+                                    <i data-lucide="monitor" style="width: 80px; height: 80px; color: var(--cor-primaria);"></i>
+                                </div>
+                                <div class="pairing-steps">
+                                    <div class="pairing-step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-text">Abra o app no telão</div>
+                                    </div>
+                                    <div class="pairing-step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-text">Copie o código gerado</div>
+                                    </div>
+                                    <div class="pairing-step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-text">Cole o código abaixo</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Código de Pareamento (6 dígitos)</label>
+                                <div class="code-input-group">
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                    <span class="code-separator">-</span>
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                    <input type="text" class="code-input" maxlength="1" pattern="[0-9]">
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-block btn-large">
+                                <i data-lucide="link" style="width: 18px; height: 18px;"></i>
+                                Conectar Dispositivo
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Nearby Devices -->
+                    <div class="admin-card" style="margin-top: var(--espacamento-lg);">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="wifi" style="width: 20px; height: 20px;"></i>
+                                Dispositivos Próximos
+                            </h3>
+                            <button class="btn btn-outline btn-small">
+                                <i data-lucide="search" style="width: 14px; height: 14px;"></i>
+                                Buscar
+                            </button>
+                        </div>
+                        
+                        <p style="color: #8b92a8; font-size: 0.85rem; margin-bottom: var(--espacamento-lg);">
+                            3 dispositivos detectados na rede local
+                        </p>
+                        
+                        <div class="nearby-devices-list">
+                            <div class="nearby-device">
+                                <div class="nearby-device-icon">
+                                    <i data-lucide="monitor" style="width: 24px; height: 24px; color: var(--cor-primaria);"></i>
+                                </div>
+                                <div class="nearby-device-info">
+                                    <div class="nearby-device-name">MIDIAH-TV-01</div>
+                                    <div class="nearby-device-details">
+                                        <span>192.168.1.105</span>
+                                        <span>•</span>
+                                        <span>Samsung 55"</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-small">
+                                    <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                                    Conectar
+                                </button>
+                            </div>
+                            
+                            <div class="nearby-device">
+                                <div class="nearby-device-icon">
+                                    <i data-lucide="monitor" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+                                </div>
+                                <div class="nearby-device-info">
+                                    <div class="nearby-device-name">MIDIAH-TV-02</div>
+                                    <div class="nearby-device-details">
+                                        <span>192.168.1.108</span>
+                                        <span>•</span>
+                                        <span>LG 65"</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-small">
+                                    <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                                    Conectar
+                                </button>
+                            </div>
+                            
+                            <div class="nearby-device">
+                                <div class="nearby-device-icon">
+                                    <i data-lucide="smartphone" style="width: 24px; height: 24px; color: #22c55e;"></i>
+                                </div>
+                                <div class="nearby-device-info">
+                                    <div class="nearby-device-name">TABLET-PRACA-01</div>
+                                    <div class="nearby-device-details">
+                                        <span>192.168.1.112</span>
+                                        <span>•</span>
+                                        <span>Android Tablet</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-small">
+                                    <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                                    Conectar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Connected Devices -->
+                <div class="players-col-sidebar">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">
+                                <i data-lucide="monitor-check" style="width: 20px; height: 20px;"></i>
+                                Dispositivos Conectados
+                            </h3>
+                        </div>
+                        
+                        <p style="color: #8b92a8; font-size: 0.85rem; margin-bottom: var(--espacamento-lg);">
+                            12 players ativos no sistema
+                        </p>
+                        
+                        <div class="connected-devices-list">
+                            <div class="connected-device">
+                                <div class="connected-device-header">
+                                    <div class="device-status online"></div>
+                                    <div class="device-info-header">
+                                        <div class="device-name">Shopping Center A</div>
+                                        <div class="device-id">ID: #4821</div>
+                                    </div>
+                                </div>
+                                <div class="device-details-grid">
+                                    <div class="device-detail">
+                                        <i data-lucide="monitor" style="width: 14px; height: 14px;"></i>
+                                        <span>Samsung 55"</span>
+                                    </div>
+                                    <div class="device-detail">
+                                        <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                                        <span>Praça Central</span>
+                                    </div>
+                                </div>
+                                <div class="device-actions">
+                                    <button class="btn-icon-small" title="Configurar">
+                                        <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                    <button class="btn-icon-small" title="Desconectar">
+                                        <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="connected-device">
+                                <div class="connected-device-header">
+                                    <div class="device-status online"></div>
+                                    <div class="device-info-header">
+                                        <div class="device-name">Farmácia Popular</div>
+                                        <div class="device-id">ID: #4822</div>
+                                    </div>
+                                </div>
+                                <div class="device-details-grid">
+                                    <div class="device-detail">
+                                        <i data-lucide="monitor" style="width: 14px; height: 14px;"></i>
+                                        <span>LG 43"</span>
+                                    </div>
+                                    <div class="device-detail">
+                                        <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                                        <span>Balcão Principal</span>
+                                    </div>
+                                </div>
+                                <div class="device-actions">
+                                    <button class="btn-icon-small" title="Configurar">
+                                        <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                    <button class="btn-icon-small" title="Desconectar">
+                                        <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="connected-device">
+                                <div class="connected-device-header">
+                                    <div class="device-status offline"></div>
+                                    <div class="device-info-header">
+                                        <div class="device-name">Posto de Gasolina</div>
+                                        <div class="device-id">ID: #4823</div>
+                                    </div>
+                                </div>
+                                <div class="device-details-grid">
+                                    <div class="device-detail">
+                                        <i data-lucide="smartphone" style="width: 14px; height: 14px;"></i>
+                                        <span>Tablet 10"</span>
+                                    </div>
+                                    <div class="device-detail">
+                                        <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                                        <span>Área de Café</span>
+                                    </div>
+                                </div>
+                                <div class="device-actions">
+                                    <button class="btn-icon-small" title="Configurar">
+                                        <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                    <button class="btn-icon-small" title="Desconectar">
+                                        <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="connected-device">
+                                <div class="connected-device-header">
+                                    <div class="device-status online"></div>
+                                    <div class="device-info-header">
+                                        <div class="device-name">Academia Fitness</div>
+                                        <div class="device-id">ID: #4824</div>
+                                    </div>
+                                </div>
+                                <div class="device-details-grid">
+                                    <div class="device-detail">
+                                        <i data-lucide="monitor" style="width: 14px; height: 14px;"></i>
+                                        <span>Sony 50"</span>
+                                    </div>
+                                    <div class="device-detail">
+                                        <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                                        <span>Área Cardio</span>
+                                    </div>
+                                </div>
+                                <div class="device-actions">
+                                    <button class="btn-icon-small" title="Configurar">
+                                        <i data-lucide="settings" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                    <button class="btn-icon-small" title="Desconectar">
+                                        <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; padding-top: var(--espacamento-md); color: #8b92a8; font-size: 0.85rem;">
+                            <button class="btn-text" style="color: var(--cor-primaria);">Ver todos os 12 dispositivos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        // Verificar se é admin
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (user.tipo !== 'admin') {
+            window.location.href = '../login.html';
+        }
+        
+        // Auto-focus on code inputs
+        const codeInputs = document.querySelectorAll('.code-input');
+        codeInputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1 && index < codeInputs.length - 1) {
+                    codeInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                    codeInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

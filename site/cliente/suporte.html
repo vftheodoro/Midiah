@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Suporte e Ajuda - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Central de Ajuda</h1>
+                <p class="topbar-subtitle">Encontre respostas ou entre em contato</p>
+            </div>
+            <div class="topbar-right">
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Search Bar -->
+            <div class="help-search-section">
+                <div class="help-search-box">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Como podemos ajudar você hoje?" class="help-search-input">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
+                <p class="help-search-subtitle">ou navegue pelos tópicos abaixo</p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon whatsapp">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Fale com nosso suporte via WhatsApp</p>
+                    <button class="btn btn-outline btn-block">
+                        <i data-lucide="send"></i>
+                        Abrir Chat
+                    </button>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon email">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Envie sua dúvida por email</p>
+                    <button class="btn btn-outline btn-block">
+                        <i data-lucide="send"></i>
+                        Enviar Email
+                    </button>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon phone">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <h3>Telefone</h3>
+                    <p>(11) 4002-8922</p>
+                    <button class="btn btn-outline btn-block">
+                        <i data-lucide="phone-call"></i>
+                        Ligar Agora
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <h2>Perguntas Frequentes</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i data-lucide="play-circle"></i>
+                        </div>
+                        <h3>Criando Campanhas</h3>
+                        <p>6 artigos</p>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i data-lucide="credit-card"></i>
+                        </div>
+                        <h3>Pagamentos</h3>
+                        <p>8 artigos</p>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <h3>Relatórios</h3>
+                        <p>4 artigos</p>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i data-lucide="settings"></i>
+                        </div>
+                        <h3>Configurações</h3>
+                        <p>5 artigos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Questions -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="help-circle"></i>
+                        Mais Populares
+                    </h3>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>
+                            <span>Como criar minha primeira campanha?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Para criar sua primeira campanha, siga estes passos:</p>
+                            <ol>
+                                <li>Acesse o menu "Campanhas" no painel lateral</li>
+                                <li>Clique no botão "Nova Campanha"</li>
+                                <li>Preencha as informações solicitadas (nome, descrição, período)</li>
+                                <li>Faça o upload da sua mídia (imagem ou vídeo)</li>
+                                <li>Escolha os locais de exibição</li>
+                                <li>Revise e envie para aprovação</li>
+                            </ol>
+                            <p>Após a aprovação, sua campanha começará a ser exibida automaticamente.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>
+                            <span>Qual o formato de arquivo aceito para os anúncios?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Aceitamos os seguintes formatos:</p>
+                            <ul>
+                                <li><strong>Imagens:</strong> JPG, PNG (até 5MB) - Resolução mínima: 1920x1080px</li>
+                                <li><strong>Vídeos:</strong> MP4, MOV (até 50MB) - Duração máxima: 30 segundos</li>
+                            </ul>
+                            <p>Recomendamos usar vídeos em Full HD (1920x1080px) para melhor qualidade.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>
+                            <span>Quanto tempo leva para aprovar uma campanha?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>O processo de aprovação geralmente leva de 2 a 4 horas durante o horário comercial (9h às 18h, de segunda a sexta).</p>
+                            <p>Campanhas enviadas fora do horário comercial ou nos finais de semana serão analisadas no próximo dia útil.</p>
+                            <p>Você receberá uma notificação assim que sua campanha for aprovada ou se houver alguma pendência.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>
+                            <span>Posso pausar ou cancelar uma campanha?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sim! Você tem total controle sobre suas campanhas:</p>
+                            <ul>
+                                <li><strong>Pausar:</strong> Suspende temporariamente a exibição. Você pode retomar a qualquer momento.</li>
+                                <li><strong>Cancelar:</strong> Encerra definitivamente a campanha. O valor proporcional aos dias não utilizados será creditado em sua conta.</li>
+                            </ul>
+                            <p>Para pausar ou cancelar, acesse "Minhas Campanhas", clique nos três pontos da campanha desejada e escolha a opção.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>
+                            <span>Como acompanhar o desempenho dos meus anúncios?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Você pode acompanhar métricas detalhadas na seção "Análise":</p>
+                            <ul>
+                                <li>Total de visualizações</li>
+                                <li>Taxa de conclusão (quantas pessoas viram até o final)</li>
+                                <li>Tempo médio de visualização</li>
+                                <li>Alcance estimado</li>
+                                <li>Horários de pico</li>
+                                <li>Desempenho por local</li>
+                            </ul>
+                            <p>Os dados são atualizados em tempo real.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>
+                            <span>Quais são as formas de pagamento aceitas?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Aceitamos as seguintes formas de pagamento:</p>
+                            <ul>
+                                <li><strong>PIX:</strong> Aprovação instantânea</li>
+                                <li><strong>Cartão de Crédito:</strong> Parcelamento em até 6x sem juros</li>
+                                <li><strong>Boleto Bancário:</strong> Aprovação em até 2 dias úteis</li>
+                            </ul>
+                            <p>Você pode gerenciar seus métodos de pagamento em "Faturamento".</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Support Ticket -->
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        <i data-lucide="ticket"></i>
+                        Abrir Chamado
+                    </h3>
+                </div>
+                <div class="support-form">
+                    <p class="form-description">Não encontrou a resposta que procurava? Envie sua dúvida e nossa equipe responderá em até 24 horas.</p>
+                    
+                    <div class="form-group">
+                        <label>Assunto</label>
+                        <select class="form-control">
+                            <option>Selecione um assunto...</option>
+                            <option>Problema técnico</option>
+                            <option>Dúvida sobre campanha</option>
+                            <option>Questão de pagamento</option>
+                            <option>Sugestão ou feedback</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea class="form-control" rows="5" placeholder="Descreva sua dúvida ou problema em detalhes..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Anexos (opcional)</label>
+                        <div class="file-upload-zone">
+                            <i data-lucide="upload"></i>
+                            <span>Clique para anexar arquivos ou arraste aqui</span>
+                            <p>PNG, JPG ou PDF até 10MB</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large">
+                        <i data-lucide="send"></i>
+                        Enviar Chamado
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="resources-section">
+                <h2>Recursos Adicionais</h2>
+                <div class="resources-grid">
+                    <a href="#" class="resource-card">
+                        <i data-lucide="book-open"></i>
+                        <h4>Guia Completo</h4>
+                        <p>Documentação detalhada da plataforma</p>
+                    </a>
+
+                    <a href="#" class="resource-card">
+                        <i data-lucide="video"></i>
+                        <h4>Tutoriais em Vídeo</h4>
+                        <p>Aprenda com vídeos passo a passo</p>
+                    </a>
+
+                    <a href="#" class="resource-card">
+                        <i data-lucide="users"></i>
+                        <h4>Comunidade</h4>
+                        <p>Conecte-se com outros anunciantes</p>
+                    </a>
+
+                    <a href="#" class="resource-card">
+                        <i data-lucide="megaphone"></i>
+                        <h4>Blog</h4>
+                        <p>Dicas e melhores práticas</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (!user.email) {
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>

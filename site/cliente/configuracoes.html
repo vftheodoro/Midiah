@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a3622">
+    <title>Configurações - Midiah</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-mini"></div>
+            <span class="logo-text">MIDIAH</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Painel</span>
+            </a>
+            <a href="campanhas.html" class="nav-item">
+                <i data-lucide="megaphone" class="nav-icon"></i>
+                <span>Campanhas</span>
+            </a>
+            <a href="locais.html" class="nav-item">
+                <i data-lucide="map-pin" class="nav-icon"></i>
+                <span>Locais</span>
+            </a>
+            <a href="analise.html" class="nav-item">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>Análise</span>
+            </a>
+            <a href="faturamento.html" class="nav-item">
+                <i data-lucide="wallet" class="nav-icon"></i>
+                <span>Faturamento</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AG</div>
+                <div class="user-details">
+                    <div class="user-name">Autoposto Guaricana</div>
+                    <div class="user-role">ADMINISTRADOR</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1>Configurações da Conta</h1>
+                <p class="topbar-subtitle">Gerencie suas preferências e informações</p>
+            </div>
+            <div class="topbar-right">
+                <button class="notification-bell" onclick="toggleNotifications()">
+                    <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-avatar-small" onclick="toggleProfile()">AG</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <div class="settings-layout">
+                <!-- Settings Sidebar -->
+                <div class="settings-sidebar">
+                    <button class="settings-nav-item active" data-section="perfil">
+                        <i data-lucide="user"></i>
+                        Perfil
+                    </button>
+                    <button class="settings-nav-item" data-section="empresa">
+                        <i data-lucide="building-2"></i>
+                        Empresa
+                    </button>
+                    <button class="settings-nav-item" data-section="notificacoes">
+                        <i data-lucide="bell"></i>
+                        Notificações
+                    </button>
+                    <button class="settings-nav-item" data-section="seguranca">
+                        <i data-lucide="shield"></i>
+                        Segurança
+                    </button>
+                    <button class="settings-nav-item" data-section="plano">
+                        <i data-lucide="credit-card"></i>
+                        Plano e Pagamento
+                    </button>
+                    <button class="settings-nav-item" data-section="preferencias">
+                        <i data-lucide="settings"></i>
+                        Preferências
+                    </button>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Perfil Section -->
+                    <div class="settings-section active" id="perfil">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Informações Pessoais</h3>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Foto de Perfil</label>
+                                    <div class="profile-photo-upload">
+                                        <div class="current-photo">AG</div>
+                                        <div>
+                                            <button class="btn btn-outline btn-sm">
+                                                <i data-lucide="upload"></i>
+                                                Alterar Foto
+                                            </button>
+                                            <p class="help-text">JPG ou PNG. Máximo 2MB.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Nome Completo</label>
+                                        <input type="text" class="form-control" value="João da Silva" placeholder="Seu nome completo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" value="joao@autoposto.com" placeholder="seu@email.com">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Telefone</label>
+                                        <input type="tel" class="form-control" value="(11) 98765-4321" placeholder="(00) 00000-0000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CPF</label>
+                                        <input type="text" class="form-control" value="***.***.***-**" placeholder="000.000.000-00" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="btn btn-outline">Cancelar</button>
+                                    <button class="btn btn-primary">Salvar Alterações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empresa Section -->
+                    <div class="settings-section" id="empresa">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Dados da Empresa</h3>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Razão Social</label>
+                                    <input type="text" class="form-control" value="Autoposto Guaricana LTDA" placeholder="Nome da empresa">
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>CNPJ</label>
+                                        <input type="text" class="form-control" value="**.***.***/****.***" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Inscrição Estadual</label>
+                                        <input type="text" class="form-control" value="123.456.789.012">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Endereço</label>
+                                    <input type="text" class="form-control" value="Rua Exemplo, 123" placeholder="Logradouro">
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Cidade</label>
+                                        <input type="text" class="form-control" value="São Paulo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Estado</label>
+                                        <select class="form-control">
+                                            <option value="SP" selected>São Paulo</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="MG">Minas Gerais</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CEP</label>
+                                        <input type="text" class="form-control" value="01234-567">
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="btn btn-outline">Cancelar</button>
+                                    <button class="btn btn-primary">Salvar Alterações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notificações Section -->
+                    <div class="settings-section" id="notificacoes">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Preferências de Notificação</h3>
+                            </div>
+                            <div class="notifications-list">
+                                <div class="notification-item">
+                                    <div>
+                                        <strong>Novos Anúncios</strong>
+                                        <p>Receber notificação quando um novo anúncio for aprovado</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="notification-item">
+                                    <div>
+                                        <strong>Relatórios Semanais</strong>
+                                        <p>Resumo semanal do desempenho das campanhas</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="notification-item">
+                                    <div>
+                                        <strong>Lembretes de Pagamento</strong>
+                                        <p>Avisos sobre faturas próximas do vencimento</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="notification-item">
+                                    <div>
+                                        <strong>Novidades e Atualizações</strong>
+                                        <p>Informações sobre novos recursos e melhorias</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="notification-item">
+                                    <div>
+                                        <strong>Ofertas e Promoções</strong>
+                                        <p>Descontos especiais e campanhas promocionais</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segurança Section -->
+                    <div class="settings-section" id="seguranca">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Segurança e Senha</h3>
+                            </div>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label>Senha Atual</label>
+                                    <input type="password" class="form-control" placeholder="Digite sua senha atual">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nova Senha</label>
+                                    <input type="password" class="form-control" placeholder="Digite a nova senha">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Confirmar Nova Senha</label>
+                                    <input type="password" class="form-control" placeholder="Digite novamente a nova senha">
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="btn btn-outline">Cancelar</button>
+                                    <button class="btn btn-primary">Alterar Senha</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-lg">
+                            <div class="card-header">
+                                <h3>Autenticação em Dois Fatores</h3>
+                            </div>
+                            <div class="two-factor-section">
+                                <div class="two-factor-info">
+                                    <i data-lucide="shield-check"></i>
+                                    <div>
+                                        <strong>Proteja sua conta com 2FA</strong>
+                                        <p>Adicione uma camada extra de segurança à sua conta</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline">
+                                    <i data-lucide="plus"></i>
+                                    Ativar 2FA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plano Section -->
+                    <div class="settings-section" id="plano">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Plano Atual</h3>
+                            </div>
+                            <div class="plan-info">
+                                <div class="current-plan">
+                                    <div class="plan-badge">
+                                        <i data-lucide="star"></i>
+                                        Premium
+                                    </div>
+                                    <h4>Plano Premium</h4>
+                                    <p class="plan-price">R$ 350,00<span>/mês</span></p>
+                                    <ul class="plan-features">
+                                        <li><i data-lucide="check"></i> Campanhas ilimitadas</li>
+                                        <li><i data-lucide="check"></i> Todos os locais disponíveis</li>
+                                        <li><i data-lucide="check"></i> Relatórios avançados</li>
+                                        <li><i data-lucide="check"></i> Suporte prioritário</li>
+                                    </ul>
+                                    <button class="btn btn-outline btn-block">Alterar Plano</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferências Section -->
+                    <div class="settings-section" id="preferencias">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Preferências do Sistema</h3>
+                            </div>
+                            <div class="preferences-list">
+                                <div class="preference-item">
+                                    <div>
+                                        <strong>Idioma</strong>
+                                        <p>Selecione o idioma da interface</p>
+                                    </div>
+                                    <select class="form-control small">
+                                        <option selected>Português (Brasil)</option>
+                                        <option>English</option>
+                                        <option>Español</option>
+                                    </select>
+                                </div>
+
+                                <div class="preference-item">
+                                    <div>
+                                        <strong>Fuso Horário</strong>
+                                        <p>Ajuste de horário local</p>
+                                    </div>
+                                    <select class="form-control small">
+                                        <option selected>(GMT-3) Brasília</option>
+                                        <option>(GMT-5) New York</option>
+                                        <option>(GMT+0) London</option>
+                                    </select>
+                                </div>
+
+                                <div class="preference-item">
+                                    <div>
+                                        <strong>Formato de Data</strong>
+                                        <p>Como as datas são exibidas</p>
+                                    </div>
+                                    <select class="form-control small">
+                                        <option selected>DD/MM/AAAA</option>
+                                        <option>MM/DD/AAAA</option>
+                                        <option>AAAA-MM-DD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card danger-zone mt-lg">
+                            <div class="card-header">
+                                <h3>Zona de Perigo</h3>
+                            </div>
+                            <div class="danger-actions">
+                                <div class="danger-item">
+                                    <div>
+                                        <strong>Desativar Conta</strong>
+                                        <p>Desative temporariamente sua conta. Você pode reativar a qualquer momento.</p>
+                                    </div>
+                                    <button class="btn btn-outline btn-danger">Desativar</button>
+                                </div>
+                                <div class="danger-item">
+                                    <div>
+                                        <strong>Excluir Conta</strong>
+                                        <p>Exclua permanentemente sua conta e todos os dados. Esta ação não pode ser desfeita.</p>
+                                    </div>
+                                    <button class="btn btn-danger">Excluir Conta</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/notifications.js"></script>
+    <script>
+        lucide.createIcons();
+        const user = JSON.parse(localStorage.getItem('midiah_user') || '{}');
+        if (!user.email) {
+            window.location.href = '../login.html';
+        }
+
+        // Settings navigation
+        const navItems = document.querySelectorAll('.settings-nav-item');
+        const sections = document.querySelectorAll('.settings-section');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetSection = item.dataset.section;
+                
+                navItems.forEach(nav => nav.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+                
+                item.classList.add('active');
+                document.getElementById(targetSection).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

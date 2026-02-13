@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Midiah</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-box fade-in">
+            <!-- Logo -->
+            <div class="auth-logo">
+                <div class="logo-square"></div>
+            </div>
+            
+            <!-- Título -->
+            <h1 class="auth-title">Cadastro de Anunciante</h1>
+            <p class="auth-subtitle">Comece a anunciar no Autoposto Guaricana hoje mesmo</p>
+            
+            <!-- Formulário -->
+            <form class="auth-form" id="cadastroForm">
+                <div class="form-group">
+                    <label class="form-label">Nome Completo</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="user" class="icon"></i>
+                        <input 
+                            type="text" 
+                            class="form-input" 
+                            placeholder="Seu nome completo"
+                            id="nome"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Nome da Empresa / CPF/CNPJ</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="building" class="icon"></i>
+                        <input 
+                            type="text" 
+                            class="form-input" 
+                            placeholder="Razão social ou documento"
+                            id="empresa"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">WhatsApp</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="phone" class="icon"></i>
+                        <input 
+                            type="tel" 
+                            class="form-input" 
+                            placeholder="(00) 00000-0000"
+                            id="whatsapp"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email Corporativo</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="mail" class="icon"></i>
+                        <input 
+                            type="email" 
+                            class="form-input" 
+                            placeholder="seu@email.com"
+                            id="email"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Senha</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="lock" class="icon"></i>
+                        <input 
+                            type="password" 
+                            class="form-input" 
+                            placeholder="••••••••"
+                            id="password"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="form-checkbox">
+                    <input type="checkbox" id="termos" required>
+                    <label for="termos">
+                        Aceito os <a href="#" class="link-destaque">Termos de Uso</a> e a 
+                        <a href="#" class="link-destaque">Política de Privacidade</a> do Autoposto Guaricana.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-block mt-lg">
+                    Criar Minha Conta
+                    <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </button>
+            </form>
+            
+            <!-- Link login -->
+            <div class="auth-footer">
+                <p>Já possui uma conta? <a href="login.html" class="link-destaque">Faça Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Midiah</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-box fade-in">
+            <!-- Logo -->
+            <div class="auth-logo">
+                <div class="logo-square"></div>
+            </div>
+            
+            <!-- Título -->
+            <h1 class="auth-title">Gestão de Anúncios DOOH</h1>
+            <p class="auth-subtitle">Acesse sua conta para gerenciar suas campanhas</p>
+            
+            <!-- Formulário -->
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">E-mail</label>
+                    <div class="form-input-icon">
+                        <i data-lucide="mail" class="icon"></i>
+                        <input 
+                            type="text" 
+                            class="form-input" 
+                            placeholder="seu@email.com ou admin"
+                            id="email"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="flex justify-between items-center">
+                        <label class="form-label">Senha</label>
+                        <a href="#" class="forgot-password">Esqueci minha senha</a>
+                    </div>
+                    <div class="form-input-icon">
+                        <i data-lucide="lock" class="icon"></i>
+                        <input 
+                            type="password" 
+                            class="form-input" 
+                            placeholder="••••••••"
+                            id="password"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <div class="form-checkbox">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Lembrar de mim</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large btn-block mt-lg">
+                    Entrar
+                    <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                </button>
+            </form>
+            
+            <!-- Link cadastro -->
+            <div class="auth-footer">
+                <p>Não tem uma conta? <a href="cadastro.html" class="link-destaque">Cadastre-se</a></p>
+            </div>
+            
+            <!-- Footer info -->
+            <div class="auth-info">
+                <span><i data-lucide="shield-check" style="width: 14px; height: 14px;"></i> SEGURO</span>
+                <span><i data-lucide="zap" style="width: 14px; height: 14px;"></i> RÁPIDO</span>
+                <span><i data-lucide="globe" style="width: 14px; height: 14px;"></i> GLOBAL</span>
+            </div>
+            
+            <p class="auth-copyright">
+                © 2024 AUTOPOSTO GUARICANA. TODOS OS DIREITOS RESERVADOS.
+            </p>
+        </div>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

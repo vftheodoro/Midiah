@@ -1,0 +1,220 @@
+/* ============================================
+   MIDIAH - Mobile Optimizations
+   Estilos específicos para dispositivos móveis
+   ============================================ */
+
+/* Prevenir zoom indesejado no iOS */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    font-size: 16px !important;
+}
+
+/* Safe area para notch (iPhone X+) */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .sidebar {
+        padding-left: max(var(--espacamento-lg), env(safe-area-inset-left));
+    }
+    
+    .notifications-drawer {
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+}
+
+/* Melhorar performance em animações mobile */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Otimização de toque */
+.btn,
+.notification-bell,
+.user-avatar-small,
+.btn-close,
+a {
+    -webkit-tap-highlight-color: rgba(255, 200, 0, 0.2);
+    touch-action: manipulation;
+}
+
+/* Scroll suave em mobile */
+.notifications-body,
+.sidebar-nav {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Landscape mobile específico */
+@media (max-width: 968px) and (orientation: landscape) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .notifications-drawer {
+        width: 360px;
+    }
+    
+    .wizard-progress {
+        padding: var(--espacamento-md);
+    }
+    
+    .upload-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Tablets em portrait */
+@media (min-width: 768px) and (max-width: 968px) {
+    .notifications-drawer {
+        width: 380px;
+        right: -380px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pequenas melhorias de UX mobile */
+@media (max-width: 768px) {
+    /* Menu hambúrguer (quando implementado) */
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--cor-card);
+        border: 1px solid var(--cor-borda);
+        border-radius: var(--radius-md);
+        color: var(--cor-primaria);
+        cursor: pointer;
+    }
+    
+    /* Overlay mais escuro em mobile */
+    .notifications-overlay {
+        background: rgba(5, 32, 22, 0.92);
+    }
+    
+    /* Botões flutuantes (FAB) */
+    .fab-button {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--cor-primaria);
+        color: var(--cor-verde-escuro);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(255, 200, 0, 0.4);
+        z-index: 900;
+        border: none;
+        cursor: pointer;
+        transition: var(--transicao);
+    }
+    
+    .fab-button:active {
+        transform: scale(0.95);
+    }
+    
+    /* Cards mais compactos */
+    .stat-card,
+    .card {
+        border-radius: var(--radius-lg);
+    }
+    
+    /* Textos mais legíveis */
+    .step-description,
+    .topbar-subtitle {
+        line-height: 1.5;
+    }
+    
+    /* Espaçamento entre seções */
+    .dashboard-content > * + * {
+        margin-top: var(--espacamento-lg);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+    .topbar {
+        padding: var(--espacamento-sm);
+    }
+    
+    .wizard-container {
+        padding: var(--espacamento-md);
+    }
+    
+    .upload-area {
+        padding: var(--espacamento-md);
+    }
+    
+    .notification-item {
+        border-radius: var(--radius-md);
+    }
+    
+    .btn-block {
+        font-size: 0.85rem;
+    }
+}
+
+/* Modo paisagem em celulares muito pequenos */
+@media (max-height: 500px) and (orientation: landscape) {
+    .upload-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        margin-bottom: var(--espacamento-sm);
+    }
+    
+    .upload-title {
+        font-size: 1rem;
+        margin-bottom: var(--espacamento-xs);
+    }
+    
+    .upload-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .wizard-progress {
+        padding: var(--espacamento-sm);
+    }
+    
+    .step-circle {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* PWA - Standalone mode */
+@media all and (display-mode: standalone) {
+    /* Adicionar padding para status bar */
+    .topbar {
+        padding-top: calc(var(--espacamento-lg) + env(safe-area-inset-top));
+    }
+    
+    /* Remover elementos desnecessários em PWA */
+    .install-prompt {
+        display: none;
+    }
+}
